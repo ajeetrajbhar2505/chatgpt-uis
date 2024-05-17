@@ -13,9 +13,9 @@ export class VideoPlayerComponent {
   ]
 
   playlists: any[] = [
-    { topic: 'Introduction', time: '0h 30min', isactive: true },
-    { topic: 'Getting Started', time: '1h 10min', isactive: false },
-    { topic: 'Learn Figma', time: '2h 20min', isactive: false },
+    { topic: 'Introduction', time: '0h 30min', isactive: true ,locked : false},
+    { topic: 'Getting Started', time: '1h 10min', isactive: false ,locked : false},
+    { topic: 'Learn Figma', time: '2h 20min', isactive: false ,locked : true},
   ]
 
   activetab: string = "Lesson"

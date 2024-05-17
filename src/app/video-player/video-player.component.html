@@ -1,7 +1,7 @@
 <div class="container">
     <div class="video-thumbnail">
-        <video width="320" height="240" poster="assets/children-reading-books-white-background_1308-94746.avif"
-            src="" autoplay>
+        <video width="320" height="240" poster="assets/children-reading-books-white-background_1308-94746.avif" src=""
+            autoplay>
         </video>
         <div class="play-button">
             <i style="font-size:24px" class="fa">&#xf144;</i>
@@ -32,7 +32,7 @@
                     [innerHTML]="data.icon"></i> {{data.title}}</button>
         </div>
         <div>
-            <div class="lesson {{data.isactive?'active':''}}" (click)="activatePlaylist(data)"
+            <div class="lesson {{data.isactive?'active':''}}" (click)="data.locked?null:activatePlaylist(data)"
                 *ngFor="let data of playlists;let i = index">
                 <span>{{i+1}}</span>
                 <div class="lesson-info">
@@ -40,7 +40,7 @@
                     <p>{{data.time}}</p>
                 </div>
                 <div class="play-icon">
-                    <i style="font-size:24px" class="fa">&#xf144;</i>
+                    <i style="font-size:24px" class="fa">{{data.locked?'&#xf023;':'&#xf144;'}}</i>
                 </div>
             </div>
         </div>
