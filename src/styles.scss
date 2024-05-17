@@ -1,7 +1,8 @@
 /* Global styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Soft grayish-blue background */
+    background-color: #f8f9fa;
+    /* Soft grayish-blue background */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -11,8 +12,8 @@ body {
 
 /* Container styles */
 .container {
-    width: 360px; /* Maximum width for larger screens */
-    background-color: #ffffff; /* White container background */
+    width: 360px;
+    background-color: #ffffff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,13 +22,17 @@ body {
 /* Media query for mobile */
 @media (max-width: 480px) {
     .container {
-        width: 100%; /* Full width on mobile devices */
-        border-radius: 0; /* Remove border-radius on mobile devices */
+        width: 100%;
+        /* Full width on mobile devices */
+        border-radius: 0;
+        /* Remove border-radius on mobile devices */
     }
-    body{
+
+    body {
         display: block !important;
     }
-    .course-info{
+
+    .course-info {
         width: fit-content !important;
     }
 }
@@ -37,8 +42,16 @@ body {
     position: relative;
     width: 100%;
     height: 200px;
-    background: #f0f0f0 url('https://via.placeholder.com/350x200') no-repeat center center/cover; /* Light gray background with placeholder image */
+
+    // background: url('assets/children-reading-books-white-background_1308-94746.avif');
+    // background-repeat: no-repeat;
+    // background-size: cover; /* Adjusts the background image to cover the entire container */
+    // background-position: center;
+    video {
+        width: 100%;
+    }
 }
+
 
 .play-button {
     position: absolute;
@@ -49,69 +62,101 @@ body {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('https://via.placeholder.com/20');
-    background-repeat: no-repeat;
-    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .time {
     position: absolute;
     right: 15px;
     top: 15px;
-    color: #ffffff; /* White text color */
-    font-size: 12px; /* Small font size */
+    color: #ffffff;
+    /* White text color */
+    font-size: 12px;
+    /* Small font size */
     font-family: 'Arial', sans-serif;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
     padding: 5px 10px;
     border-radius: 10px;
 }
 
 /* Course info styles */
 .course-info {
-    width: 360px;
-    padding: 20px;
-    border-radius: 49px 49px 0 0; /* Rounded upper border */
+    margin-top: 20px;
+    border-radius: 49px 49px 0 0;
+    /* Rounded upper border */
     border: 20px solid transparent;
     background: white;
-    position: absolute;
-    top: 165px;
+    // position: absolute;
+    // top: 165px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    /* Positions items at each end of the container */
+    align-items: center;
+    /* Aligns items vertically */
+}
+
+h2 {
+    flex: 1;
+    /* Makes the heading take up remaining space */
 }
 
 .course-info h2 {
     margin: 0;
     font-size: 24px;
-    color: #333333; /* Dark gray text color */
+    color: #333333;
+    /* Dark gray text color */
 }
 
 .rating {
     margin: 10px 0;
-    font-size: 18px;
-    color: #f39c12; /* Orange rating color */
+    font-size: 15px;
+    color: #f39c12;
+    /* Orange rating color */
 }
 
 .instructor-info {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 15px;
     flex-wrap: wrap;
 }
 
 .instructor-info p {
+    flex: auto;
+    /* Each detail occupies half of the container */
     display: flex;
     align-items: center;
-    margin: 5px 10px 5px 0;
+    margin: 5px 0;
+    /* Adjusted margin */
+}
+.instructor-info p:nth-child(2),
+p:nth-child(4) {
+  justify-content: right;
 }
 
-.instructor-info img {
+.instructor-info .fa {
     margin-right: 10px;
+    flex: 0 0 auto;
+    /* Reset flex property for the icon */
 }
+
+
 
 .description p {
-    color: #666666; /* Grayish text color */
+    color: #666666;
+    /* Grayish text color */
 }
 
 .description a {
-    color: #007bff; /* Blue link color */
+    color: #007bff;
+    /* Blue link color */
     text-decoration: none;
 }
 
@@ -127,12 +172,18 @@ body {
     border: none;
     cursor: pointer;
     text-align: center;
-    color: #555555; /* Dark gray text color */
+    color: #555555;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* Dark gray text color */
 }
 
 .tab.active {
-    color: #007bff; /* Blue active tab color */
-    border-bottom: 2px solid #007bff; /* Blue bottom border for active tab */
+    color: #007bff;
+    /* Blue active tab color */
+    border-bottom: 2px solid #007bff;
+    /* Blue bottom border for active tab */
 }
 
 .lessons {
@@ -144,18 +195,28 @@ body {
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    background: #f9f9f9;
+    // background: #f9f9f9;
+    background-color: #f0f0f0;
     border-radius: 10px;
-    border: 2px solid transparent; /* Remove border from all lessons */
+    opacity: 0.7;
+    border: 2px solid transparent;
+
+    /* Remove border from all lessons */
+    i {
+        color: #007bff;
+    }
 }
 
-.lesson:first-child {
-    border-color: #007bff; /* Blue border for the first lesson */
+.lesson.active {
+    border-color: #007bff;
+    /* Blue border for the first lesson */
+    opacity: unset;
 }
 
 .lesson span {
     font-size: 18px;
-    color: #007bff; /* Blue lesson number color */
+    color: #007bff;
+    /* Blue lesson number color */
     margin-right: 20px;
 }
 
@@ -168,21 +229,24 @@ body {
 }
 
 .lesson-info p:not(:first-child) {
-    font-size: 13px; /* Updated font size for lesson timing */
-    color: #555555; /* Dark gray text color */
+    font-size: 13px;
+    /* Updated font size for lesson timing */
+    color: #555555;
+    /* Dark gray text color */
 }
 
 .play-icon {
     width: 20px;
     height: 20px;
-    background: url('https://via.placeholder.com/20') no-repeat center center/cover;
 }
 
 .enroll-btn {
     width: 100%;
     padding: 15px;
-    background: #007bff; /* Blue button background color */
-    color: #ffffff; /* White button text color */
+    background: #007bff;
+    /* Blue button background color */
+    color: #ffffff;
+    /* White button text color */
     border: none;
     border-radius: 10px;
     cursor: pointer;
