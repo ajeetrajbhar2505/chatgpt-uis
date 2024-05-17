@@ -1,1 +1,191 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Soft grayish-blue background */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+/* Container styles */
+.container {
+    width: 360px; /* Maximum width for larger screens */
+    background-color: #ffffff; /* White container background */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for mobile */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Full width on mobile devices */
+        border-radius: 0; /* Remove border-radius on mobile devices */
+    }
+    body{
+        display: block !important;
+    }
+    .course-info{
+        width: fit-content !important;
+    }
+}
+
+/* Video thumbnail styles */
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0 url('https://via.placeholder.com/350x200') no-repeat center center/cover; /* Light gray background with placeholder image */
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('https://via.placeholder.com/20');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.time {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #ffffff; /* White text color */
+    font-size: 12px; /* Small font size */
+    font-family: 'Arial', sans-serif;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* Course info styles */
+.course-info {
+    width: 360px;
+    padding: 20px;
+    border-radius: 49px 49px 0 0; /* Rounded upper border */
+    border: 20px solid transparent;
+    background: white;
+    position: absolute;
+    top: 165px;
+}
+
+.course-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333333; /* Dark gray text color */
+}
+
+.rating {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f39c12; /* Orange rating color */
+}
+
+.instructor-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.instructor-info p {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px 5px 0;
+}
+
+.instructor-info img {
+    margin-right: 10px;
+}
+
+.description p {
+    color: #666666; /* Grayish text color */
+}
+
+.description a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+}
+
+.tabs {
+    display: flex;
+    margin: 20px 0;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: #555555; /* Dark gray text color */
+}
+
+.tab.active {
+    color: #007bff; /* Blue active tab color */
+    border-bottom: 2px solid #007bff; /* Blue bottom border for active tab */
+}
+
+.lessons {
+    margin: 20px 0;
+}
+
+.lesson {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid transparent; /* Remove border from all lessons */
+}
+
+.lesson:first-child {
+    border-color: #007bff; /* Blue border for the first lesson */
+}
+
+.lesson span {
+    font-size: 18px;
+    color: #007bff; /* Blue lesson number color */
+    margin-right: 20px;
+}
+
+.lesson-info {
+    flex-grow: 1;
+}
+
+.lesson-info p {
+    margin: 0;
+}
+
+.lesson-info p:not(:first-child) {
+    font-size: 13px; /* Updated font size for lesson timing */
+    color: #555555; /* Dark gray text color */
+}
+
+.play-icon {
+    width: 20px;
+    height: 20px;
+    background: url('https://via.placeholder.com/20') no-repeat center center/cover;
+}
+
+.enroll-btn {
+    width: 100%;
+    padding: 15px;
+    background: #007bff; /* Blue button background color */
+    color: #ffffff; /* White button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
