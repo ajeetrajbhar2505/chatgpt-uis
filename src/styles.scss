@@ -7,12 +7,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: fit-content;
+    height: 100vh;
+    background: url('assets/back_to_school.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjusts the background image to cover the entire container */
+    background-position: center;
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
 }
 
 /* Container styles */
 .container {
-    width: 360px;
+    width: 400px;
     background-color: #ffffff;
     border-radius: 20px;
     overflow: hidden;
@@ -30,6 +35,7 @@ body {
 
     body {
         display: block !important;
+        height: fit-content !important;
     }
 
     .course-info {
@@ -136,9 +142,10 @@ h2 {
     margin: 5px 0;
     /* Adjusted margin */
 }
+
 .instructor-info p:nth-child(2),
 p:nth-child(4) {
-  justify-content: right;
+    justify-content: right;
 }
 
 .instructor-info .fa {
