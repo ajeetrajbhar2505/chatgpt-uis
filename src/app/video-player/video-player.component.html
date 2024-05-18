@@ -25,7 +25,7 @@
         </div>
         <div class="description">
             <p>{{readMore?videoDetails.describe:videoDetails.shortDescribe}}
-                <a href="#" (click)="togglereadMoreDescribe()">{{readMore?'Hide':'Read More'}}</a></p>
+                <a  (click)="togglereadMoreDescribe()">{{readMore?'Hide':'Read More'}}</a></p>
         </div>
         <div class="tabs">
             <button *ngFor="let data of tabs" (click)="activateTab(data)"
@@ -73,7 +73,7 @@
             </button>
           </div>
     </div>
-    <div class="enroll">
+    <div class="enroll" routerLink="/home">
         <button class="enroll-btn">Enroll Now</button>
     </div>
 </div>
