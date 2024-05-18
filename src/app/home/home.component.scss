@@ -81,8 +81,20 @@ main {
 
 .subject-tags {
     display: flex;
+    overflow-x: auto;
     gap: 10px;
 }
+
+/* Hide scrollbar for Webkit browsers */
+.subject-tags::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for Firefox */
+  .subject-tags {
+    scrollbar-width: none; /* Firefox */
+  }
+  
 
 .subject-tags button {
     border: none;
@@ -108,10 +120,28 @@ main {
 
 .courses {
     display: flex;
+    overflow-x: auto;
     gap: 15px;
-}
+    white-space: nowrap; /* Prevents wrapping of flex items */
+  }
+
+  .course-card {
+    background: #f5f5f5;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 200px; /* Ensures a minimum width for the course cards */
+  }
+
+  .courses::-webkit-scrollbar {
+    display: none;
+  }
+
+  .courses {
+    scrollbar-width: none;
+  }
 
 .course-card {
+    align-items: center;
     background-color: #e0f7fa;
     border-radius: 10px;
     padding: 15px;
@@ -138,6 +168,8 @@ main {
     margin-bottom: 10px;
 }
 
+
+
 footer {
     display: flex;
     justify-content: space-around;
@@ -148,4 +180,7 @@ footer {
 footer i {
     font-size: 24px;
     color: #333;
+}
+footer i:first-child{
+    color: #00796b;
 }
