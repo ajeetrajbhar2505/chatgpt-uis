@@ -39,7 +39,7 @@ export class VideoPlayerComponent implements OnInit {
   videoDetails = {
     poster: 'assets/children-reading-books-white-background_1308-94746.avif',
     videoPath: 'https://gemootest.s3.us-east-2.amazonaws.com/s/res/650375741060538368/39869a6d1f6c2b4824621b37bfb3a474.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARLZICB6QQHKRCV7K%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T112243Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=1f7c4dc522a6de2e74b19bf9fa3e641b7750a51e15412986d10bc5ee1703e316',
-    locked: false,
+    locked: true,
     title: 'Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
     describe: 'NEW 3D Animated Nursery Rhymes with Baby Taku from ChuChu TV Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
     shortDescribe: '',
