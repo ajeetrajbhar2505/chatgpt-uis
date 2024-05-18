@@ -42,14 +42,19 @@ export class VideoPlayerComponent implements OnInit {
     locked: false,
     title: 'Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
     describe: 'NEW 3D Animated Nursery Rhymes with Baby Taku from ChuChu TV Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
-    shortDescribe : '',
-    fullDescribe : '',
+    shortDescribe: '',
+    fullDescribe: '',
     Rating: 4.5,
     author: 'ChuChu TV',
     studentEnrolledCount: 150
   }
 
-
+  recieverDetails: any = {
+    _id: 1,
+    profile: 'assets/user.png'
+  }
+  messages: any[] = []
+  message: string = ''
 
   tabs: any[] = [
     { title: 'Lesson', isactive: true, icon: '&#xf518;' },
@@ -73,6 +78,32 @@ export class VideoPlayerComponent implements OnInit {
 
   activateTab(tab: any) {
     this.activetab = tab.title
+    if (tab.title != 'Chat') {
+      return
+    }
+    this.messages = []
+    const chat1 = {
+      roomId: 1,
+      sender: this.recieverDetails._id,
+      receiver: this.recieverDetails._id,
+      messageText: 'How can I help you?',
+      sentAt: Date(),
+      lastSeen: '',
+      lastMessage: '',
+      token: 1
+    }
+    const chat2 = {
+      roomId: 1,
+      sender: '',
+      receiver: this.recieverDetails._id,
+      messageText: 'Could you please assist me learn!',
+      sentAt: Date(),
+      lastSeen: '',
+      lastMessage: '',
+      token: 1
+    }
+    this.message = ""
+    this.messages.push(chat1,chat2)
   }
 
   activatePlaylist(playlists: any) {
@@ -245,7 +276,38 @@ export class VideoPlayerComponent implements OnInit {
     }
   }
 
+  filterDateTime(dateString: string): string {
+    const date = new Date(dateString);
+    const options: any = { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
+    return date.toLocaleDateString(undefined, options);
+  }
 
+  async sendMessage() {
+    if (this.messages.length == 2) {
+      return
+    }
+    if (!this.message) {
+      return
+    }
+    try {
+      const chat = {
+        roomId: 1,
+        sender: '',
+        receiver: this.recieverDetails._id,
+        messageText: this.message,
+        sentAt: Date(),
+        lastSeen: '',
+        lastMessage: '',
+        token: 1
+      }
+      this.message = ""
+      this.messages.push(chat)
+
+    }
+    catch (err) {
+
+    }
+  }
   togglereadMoreDescribe() {
     this.readMore = !this.readMore
   }

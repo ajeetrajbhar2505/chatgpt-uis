@@ -7,9 +7,6 @@
             [src]="videoDetails.videoPath"
             [controls]="!videoDetails.locked"></video>
 
-        <!-- Controls -->
-        <div class="play-button" (click)="playPauseContent()">
-        </div>
     </div>
     <div class="course-info">
         <div class="heading">
@@ -35,7 +32,7 @@
                 class="tab {{activetab == data.title?'active':''}}"><i style='font-size:15px' class='fas'
                     [innerHTML]="data.icon"></i> {{data.title}}</button>
         </div>
-        <div>
+        <div *ngIf="activetab == 'Lesson'">
             <div class="lesson {{data.isactive?'active':''}}" (click)="activatePlaylist(data);skipLesson(data)"
                 *ngFor="let data of playlists;let i = index">
                 <span>{{i+1}}</span>
@@ -48,6 +45,37 @@
                 </div>
             </div>
         </div>
+        <div class="chat-window" *ngIf="activetab != 'Lesson'">
+            <div class="chat-body {{message.sender !== recieverDetails?._id?'send':'received'}}"
+              *ngFor="let message of messages;">
+              <div class="message" *ngIf="message.sender !== recieverDetails?._id">
+                <p>{{message.messageText}}</p>
+                <!-- <img [src]="userDetails.profile?userDetails.profile:'assets/user.png'" alt="" width="40px" alt=""
+                            style="margin-left: 10px;"> -->
+              <span class="datetime">{{filterDateTime(message.sentAt)}}</span>
+            </div>
+              <div class="message" *ngIf="message.sender === recieverDetails?._id">
+                <img [src]="recieverDetails?.profile?recieverDetails.profile:'assets/user.png'" alt="" width="40px"
+                  height="40px">
+                <p>{{message.messageText}}</p>
+              <span class="datetime">{{filterDateTime(message.sentAt)}}</span>
+            </div>
+            </div>
+
+            <div class="chat-footer" *ngIf="messages && activetab != 'Lesson'" >
+                <div class="input-box">
+                  <input type="text" [readOnly]="messages.length == 2" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message here">
+                </div>
+                <button [disabled]="message == ''" [class]="message != ''?'button-active':''" (click)="sendMessage()">
+                    <i  class="fa">{{messages.length == 2?'&#xf023;':'&#xf061;'}}</i>
+                </button>
+              </div>
+              
+          </div>
+        
+
+    </div>
+    <div class="enroll">
         <button class="enroll-btn">Enroll Now</button>
     </div>
 </div>
