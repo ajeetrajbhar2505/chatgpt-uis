@@ -1,12 +1,13 @@
 <div class="container">
     <div class="video-thumbnail">
-        <video width="320" height="240" poster="assets/children-reading-books-white-background_1308-94746.avif" src=""
-            autoplay>
-        </video>
-        <div class="play-button">
-            <i style="font-size:24px" class="fa">&#xf144;</i>
+
+        <video width="100%" 
+        id="classContent" (loadeddata)="checkContentLoaded()" (timeupdate)="checkContinuousContentduration()" 
+        frameborder="0" poster="assets/children-reading-books-white-background_1308-94746.avif" src="https://gemootest.s3.us-east-2.amazonaws.com/s/res/650375741060538368/39869a6d1f6c2b4824621b37bfb3a474.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARLZICB6QQHKRCV7K%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T084220Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=4fb222832ec2e20f66fd6d4948b46ba9418c16f21aaddf387d15f266e8ea26cb" controls></video>
+          
+        <!-- Controls -->
+        <div class="play-button" (click)="playPauseContent()">
         </div>
-        <div class="time">10:36</div>
     </div>
     <div class="course-info">
         <div class="heading">
@@ -32,12 +33,12 @@
                     [innerHTML]="data.icon"></i> {{data.title}}</button>
         </div>
         <div>
-            <div class="lesson {{data.isactive?'active':''}}" (click)="data.locked?null:activatePlaylist(data)"
+            <div class="lesson {{data.isactive?'active':''}}" (click)="activatePlaylist(data);skipLesson(data)"
                 *ngFor="let data of playlists;let i = index">
                 <span>{{i+1}}</span>
                 <div class="lesson-info">
                     <p>{{data.topic}}</p>
-                    <p>{{data.time}}</p>
+                    <p>{{data.timeTitle}}</p>
                 </div>
                 <div class="play-icon">
                     <i style="font-size:24px" class="fa">{{data.locked?'&#xf023;':'&#xf144;'}}</i>
