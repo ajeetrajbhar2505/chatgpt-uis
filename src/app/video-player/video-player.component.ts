@@ -23,8 +23,9 @@ export interface ContentControls {
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss'
 })
-export class VideoPlayerComponent {
+export class VideoPlayerComponent implements OnInit {
   contentLoaded = false;
+  readMore: boolean = false
   videoPlaying: boolean = false
   contentControls: ContentControls = {
     playContent: false,
@@ -35,6 +36,19 @@ export class VideoPlayerComponent {
     duration: '',
   };
 
+  videoDetails = {
+    poster: 'assets/children-reading-books-white-background_1308-94746.avif',
+    videoPath: 'https://gemootest.s3.us-east-2.amazonaws.com/s/res/650375741060538368/39869a6d1f6c2b4824621b37bfb3a474.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARLZICB6QQHKRCV7K%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T112243Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=1f7c4dc522a6de2e74b19bf9fa3e641b7750a51e15412986d10bc5ee1703e316',
+    locked: false,
+    title: 'Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
+    describe: 'NEW 3D Animated Nursery Rhymes with Baby Taku from ChuChu TV Phonics Song with TWO Words - A For Apple - ABC Alphabet Songs with Sounds for Children',
+    shortDescribe : '',
+    fullDescribe : '',
+    Rating: 4.5,
+    author: 'ChuChu TV',
+    studentEnrolledCount: 150
+  }
+
 
 
   tabs: any[] = [
@@ -44,10 +58,15 @@ export class VideoPlayerComponent {
   ]
 
   playlists: any[] = [
-    { topic: 'Introduction', time  : '0.40', timeTitle: '0h 30min', isactive: true, locked: false },
-    { topic: 'Getting Started', time  : '1.28', timeTitle: '1h 10min', isactive: false, locked: false },
-    { topic: 'Learn Figma', time  : '3.9', timeTitle: '2h 20min', isactive: false, locked: true },
+    { topic: 'Introduction', time: '0.40', timeTitle: '0h 30min', isactive: true, locked: false },
+    { topic: 'Getting Started', time: '1.28', timeTitle: '1h 10min', isactive: false, locked: false },
+    { topic: 'Learn Figma', time: '3.9', timeTitle: '2h 20min', isactive: false, locked: true },
   ]
+
+
+  ngOnInit(): void {
+    this.videoDetails.shortDescribe = this.truncateDescription(this.videoDetails.describe, 61);
+  }
 
   activetab: string = "Lesson"
   activePlaylist: string = "Introduction"
@@ -142,7 +161,7 @@ export class VideoPlayerComponent {
     }
 
     const content = this.getContentElement();
-    
+
     if (content) {
       if (content.paused) {
         content.play();
@@ -174,7 +193,7 @@ export class VideoPlayerComponent {
       this.contentControls.currentRangeDuration = deltaValue;
     }
   }
-  
+
 
   rewindContent(delta: number) {
     const content = this.getContentElement();
@@ -192,24 +211,42 @@ export class VideoPlayerComponent {
     }
   }
 
-   convertTime(timeString:any) {
+  convertTime(timeString: any) {
     let hours, minutes, seconds;
 
     if (timeString.indexOf(":") < 2) {
-        // ":" appears before the first digit, it represents hours
-        [hours, minutes] = timeString.split(":");
-        seconds = 0;
+      // ":" appears before the first digit, it represents hours
+      [hours, minutes] = timeString.split(":");
+      seconds = 0;
     } else {
-        // ":" appears after the first digit, it represents minutes
-        hours = 0;
-        [minutes, seconds] = timeString.split(":");
+      // ":" appears after the first digit, it represents minutes
+      hours = 0;
+      [minutes, seconds] = timeString.split(":");
     }
 
     if (hours && hours !== "0") {
-        return `${parseInt(hours)}h ${parseInt(minutes)}min ${parseInt(seconds)}sec`;
+      return `${parseInt(hours)}h ${parseInt(minutes)}min ${parseInt(seconds)}sec`;
     } else {
-        return `${parseInt(minutes)}min ${parseInt(seconds)}sec`;
+      return `${parseInt(minutes)}min ${parseInt(seconds)}sec`;
     }
-}
+  }
 
+  truncateDescription(description: string, maxLength: number): string {
+    if (description.length <= maxLength) {
+      return description;
+    } else {
+      // Find the last space within the maxLength
+      let truncatedDescription = description.substring(0, maxLength);
+      const lastSpaceIndex = truncatedDescription.lastIndexOf(' ');
+
+      // Truncate at the last space and append ellipsis
+      truncatedDescription = truncatedDescription.substring(0, lastSpaceIndex) + '...';
+      return truncatedDescription;
+    }
+  }
+
+
+  togglereadMoreDescribe() {
+    this.readMore = !this.readMore
+  }
 }
