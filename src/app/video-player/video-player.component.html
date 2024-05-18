@@ -61,19 +61,17 @@
               <span class="datetime">{{filterDateTime(message.sentAt)}}</span>
             </div>
             </div>
-
-            <div class="chat-footer" *ngIf="messages && activetab != 'Lesson'" >
-                <div class="input-box">
-                  <input type="text" [readOnly]="messages.length == 2" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message here">
-                </div>
-                <button [disabled]="message == ''" [class]="message != ''?'button-active':''" (click)="sendMessage()">
-                    <i  class="fa">{{messages.length == 2?'&#xf023;':'&#xf061;'}}</i>
-                </button>
-              </div>
-              
+            
           </div>
         
-
+          <div class="chat-footer" *ngIf="messages && activetab != 'Lesson'" >
+            <div class="input-box">
+              <input type="text" [readOnly]="messages.length == 2" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message here">
+            </div>
+            <button [disabled]="message == ''" [class]="message != ''?'button-active':''" (click)="sendMessage()">
+                <i  class="fa">{{messages.length == 2?'&#xf023;':'&#xf061;'}}</i>
+            </button>
+          </div>
     </div>
     <div class="enroll">
         <button class="enroll-btn">Enroll Now</button>

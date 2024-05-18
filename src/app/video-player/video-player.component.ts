@@ -54,7 +54,7 @@ export class VideoPlayerComponent implements OnInit {
     profile: 'assets/user.png'
   }
   messages: any[] = []
-  message: string = ''
+  message: string = 'Could you please assist me learn!'
 
   tabs: any[] = [
     { title: 'Lesson', isactive: true, icon: '&#xf518;' },
