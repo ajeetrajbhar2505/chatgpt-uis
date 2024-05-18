@@ -2,7 +2,6 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
-    /* Soft grayish-blue background */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -11,13 +10,10 @@ body {
     background: url('assets/back_to_school.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* Adjusts the background image to cover the entire container */
     background-position: center;
     backdrop-filter: blur(10px);
-    /* Adjust the blur radius as needed */
 }
 
-/* Container styles */
 .container {
     width: 400px;
     background-color: #ffffff;
@@ -26,42 +22,180 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Media query for mobile */
 @media (max-width: 480px) {
     .container {
         width: 100%;
-        /* Full width on mobile devices */
         border-radius: 0;
         box-shadow: unset !important;
-        /* Remove border-radius on mobile devices */
     }
-
     body {
         display: block !important;
         height: fit-content !important;
     }
-
     .course-info {
         width: fit-content !important;
     }
-}
-
-/* Video thumbnail styles */
-.video-thumbnail {
-    position: relative;
-    width: 100%; /* Or any specific width */
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    video,
-    iframe,
-    audio {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .container{
+        border-radius: unset !important;
+        padding: unset !important;
     }
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.menu-icon, .notification-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+main {
+    padding: 15px;
+}
+
+.welcome h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.trial-banner {
+    display: flex;
+    align-items: center;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.trial-text h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #00796b;
+}
+
+.trial-text p {
+    font-size: 14px;
+    color: #00796b;
+    margin: 10px 0;
+}
+
+.trial-text button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trial-image img {
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.subjects {
+    margin: 20px 0;
+}
+
+.subjects h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.subject-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.subject-tags button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.subject-tags .active {
+    background-color: #333;
+    color: #fff;
+}
+
+.popular-courses {
+    margin: 20px 0;
+}
+
+.popular-courses h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.courses {
+    display: flex;
+    gap: 15px;
+}
+
+.course-card {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1;
+}
+
+.course-card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #00796b;
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #00796b;
+}
+
+.your-courses {
+    margin: 20px 0;
+}
+
+.your-courses h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+footer i {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Additional styles from provided CSS */
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+video, iframe, audio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 .play-button {
     position: absolute;
@@ -81,17 +215,13 @@ body {
     right: 15px;
     top: 15px;
     color: #ffffff;
-    /* White text color */
     font-size: 12px;
-    /* Small font size */
     font-family: 'Arial', sans-serif;
     background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black background */
     padding: 5px 10px;
     border-radius: 10px;
 }
 
-/* Course info styles */
 .course-info {
     border-radius: 49px 49px 0 0;
     border: 20px solid transparent;
@@ -105,20 +235,17 @@ body {
 
 h2 {
     flex: 1;
-    /* Makes the heading take up remaining space */
 }
 
 .course-info h2 {
     margin: 0;
     font-size: 20px;
     color: #333333;
-    /* Dark gray text color */
 }
 
 .rating {
     font-size: 15px;
     color: #f39c12;
-    /* Orange rating color */
 }
 
 .instructor-info {
@@ -131,11 +258,9 @@ h2 {
 
 .instructor-info p {
     flex: auto;
-    /* Each detail occupies half of the container */
     display: flex;
     align-items: center;
     margin: 5px 0;
-    /* Adjusted margin */
 }
 
 .instructor-info p:nth-child(2),
@@ -146,19 +271,14 @@ p:nth-child(4) {
 .instructor-info .fa {
     margin-right: 10px;
     flex: 0 0 auto;
-    /* Reset flex property for the icon */
 }
-
-
 
 .description p {
     color: #666666;
-    /* Grayish text color */
 }
 
 .description a {
     color: #007bff;
-    /* Blue link color */
     text-decoration: none;
 }
 
@@ -178,14 +298,11 @@ p:nth-child(4) {
     display: flex;
     gap: 10px;
     align-items: center;
-    /* Dark gray text color */
 }
 
 .tab.active {
     color: #007bff;
-    /* Blue active tab color */
     border-bottom: 2px solid #007bff;
-    /* Blue bottom border for active tab */
 }
 
 .lessons {
@@ -197,28 +314,20 @@ p:nth-child(4) {
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    // background: #f9f9f9;
     background-color: #f0f0f0;
     border-radius: 10px;
     opacity: 0.7;
     border: 2px solid transparent;
-
-    /* Remove border from all lessons */
-    i {
-        color: #007bff;
-    }
 }
 
 .lesson.active {
     border-color: #007bff;
-    /* Blue border for the first lesson */
     opacity: unset;
 }
 
 .lesson span {
     font-size: 18px;
     color: #007bff;
-    /* Blue lesson number color */
     margin-right: 20px;
 }
 
@@ -232,16 +341,15 @@ p:nth-child(4) {
 
 .lesson-info p:not(:first-child) {
     font-size: 13px;
-    /* Updated font size for lesson timing */
     color: #555555;
-    /* Dark gray text color */
 }
 
 .play-icon {
     width: 20px;
     height: 20px;
 }
-.enroll{
+
+.enroll {
     width: 100%;
     text-align: center;
     position: relative;
@@ -251,9 +359,7 @@ p:nth-child(4) {
     width: 80%;
     padding: 15px;
     background: #007bff;
-    /* Blue button background color */
     color: #ffffff;
-    /* White button text color */
     border: none;
     border-radius: 10px;
     cursor: pointer;
