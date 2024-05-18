@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="chat-window" *ngIf="activetab != 'Lesson'">
+        <div class="chat-window" *ngIf="activetab == 'Chat'">
             <div class="chat-body {{message.sender !== recieverDetails?._id?'send':'received'}}"
               *ngFor="let message of messages;">
               <div class="message" *ngIf="message.sender !== recieverDetails?._id">
@@ -64,7 +64,7 @@
             
           </div>
         
-          <div class="chat-footer" *ngIf="messages && activetab != 'Lesson'" >
+          <div class="chat-footer" *ngIf="messages && activetab == 'Chat'" >
             <div class="input-box">
               <input type="text" [readOnly]="messages.length == 2" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message here">
             </div>
