@@ -64,12 +64,11 @@ body {
 
 .play-button {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 100%;
-    height: 100%;
+    height: 75%;
     background: transparent;
-    border-radius: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -93,21 +92,14 @@ body {
 
 /* Course info styles */
 .course-info {
-    margin-top: 20px;
     border-radius: 49px 49px 0 0;
-    /* Rounded upper border */
     border: 20px solid transparent;
     background: white;
-    // position: absolute;
-    // top: 165px;
 }
 
 .heading {
     display: flex;
     justify-content: space-between;
-    /* Positions items at each end of the container */
-    align-items: center;
-    /* Aligns items vertically */
 }
 
 h2 {
@@ -117,13 +109,12 @@ h2 {
 
 .course-info h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 20px;
     color: #333333;
     /* Dark gray text color */
 }
 
 .rating {
-    margin: 10px 0;
     font-size: 15px;
     color: #f39c12;
     /* Orange rating color */

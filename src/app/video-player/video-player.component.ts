@@ -192,4 +192,24 @@ export class VideoPlayerComponent {
     }
   }
 
+   convertTime(timeString:any) {
+    let hours, minutes, seconds;
+
+    if (timeString.indexOf(":") < 2) {
+        // ":" appears before the first digit, it represents hours
+        [hours, minutes] = timeString.split(":");
+        seconds = 0;
+    } else {
+        // ":" appears after the first digit, it represents minutes
+        hours = 0;
+        [minutes, seconds] = timeString.split(":");
+    }
+
+    if (hours && hours !== "0") {
+        return `${parseInt(hours)}h ${parseInt(minutes)}min ${parseInt(seconds)}sec`;
+    } else {
+        return `${parseInt(minutes)}min ${parseInt(seconds)}sec`;
+    }
+}
+
 }
