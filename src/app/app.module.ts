@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VideoPlayerComponent } from './video-player/video-player.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { ProfileInfoComponent } from './profile-info/profile-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideoPlayerComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileInfoComponent
   ],
   imports: [
     BrowserModule,
