@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { CourseComponent } from './course/course.component';
+import { FilesComponent } from './files/files.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CourseComponent } from './course/course.component';
     HomeComponent,
     ProfileInfoComponent,
     VideoPlayerComponent,
-    CourseComponent
+    CourseComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,
