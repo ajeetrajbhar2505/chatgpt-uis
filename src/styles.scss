@@ -94,6 +94,28 @@ main {
     overflow-x: auto;
     gap: 10px;
 }
+.subject-tags button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Ensure text doesn't wrap */
+}
+.subject-tags button .fa {
+    margin-right: 10px;
+    font-size: 15px;
+    color: #00796b;
+}
+.subject-tags button:hover {
+    color: #fff;
+    background-color: #333;
+    .fa{
+    color: #fff;
+    }
+}
 
 /* Hide scrollbar for Webkit browsers */
 .subject-tags::-webkit-scrollbar {
@@ -117,6 +139,9 @@ main {
 .subject-tags .active {
     background-color: #333;
     color: #fff;
+    .fa{
+    color: #fff;
+    }
 }
 
 .popular-courses {
@@ -365,4 +390,6 @@ footer i:first-child{
     width: 15px;
     margin-left: -15px;
 }
+
+
 
