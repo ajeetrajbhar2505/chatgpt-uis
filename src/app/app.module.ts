@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
+import { VideoPlayerComponent } from './video-player/video-player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,

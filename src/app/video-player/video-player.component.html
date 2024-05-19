@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="video-thumbnail">
+        <video width="100%" (click)="playPauseContent()" id="classContent" (loadeddata)="checkContentLoaded()"
+            (timeupdate)="checkContinuousContentduration()" frameborder="0" [poster]="videoDetails.poster"
+            [src]="videoDetails.videoPath" [controls]="!videoDetails.locked"></video>
+    </div>
+    <div class="course-info">
+        <div class="heading">
+            <h2>{{videoDetails.title}}</h2>
+            <div class="rating">
+                <p class="rating"><i class="fa fa-star"></i> 4.5 (98 reviews)</p>
+            </div>
+        </div>
+        <section class="skills">
+            <h3>Tags</h3>
+            <div class="subject-tags">
+                <button><i class="fa fa-chalkboard-teacher"></i> Teaching Skills</button>
+                <button><i class="fa fa-book"></i> Subject Matter Expertise</button>
+                <button><i class="fa fa-users"></i> Classroom Management</button>
+                <button><i class="fa fa-laptop"></i> Educational Technology</button>
+                <button><i class="fa fa-comments"></i> Communication Skills</button>
+                <button><i class="fa fa-lightbulb"></i> Student Engagement</button>
+                <button><i class="fa fa-clipboard-check"></i> Assessment and Evaluation</button>
+                <button><i class="fa fa-graduation-cap"></i> Professional Development</button>
+            </div>
+        </section>
+        <div class="description">
+            <h3>Description</h3>
+            <p>{{readMore?videoDetails.describe:videoDetails.shortDescribe}}
+                <a (click)="togglereadMoreDescribe()">{{readMore?'Hide':'Read More'}}</a>
+            </p>
+        </div>
+        <section class="your-courses">
+            <h3>Next courses</h3>
+            <div class="courses">
+                <div class="course-card" routerLink="/watch">
+                    <img src="https://via.placeholder.com/100" alt="Mobile UI UX Design">
+                    <h3>Mobile UI UX Design</h3>
+                    <div class="course-details">
+                        <p class="rating"><i class="fa fa-star"></i> 4.8 (112 reviews)</p>
+                        <p><i class="fa fa-clock"></i> 3h 50Min</p>
+                    </div>
+                </div>
+                <div class="course-card" routerLink="/watch">
+                    <img src="https://via.placeholder.com/100" alt="Web Design">
+                    <h3>Web Design</h3>
+                    <div class="course-details">
+                        <p class="rating"><i class="fa fa-star"></i> 4.5 (98 reviews)</p>
+                        <p><i class="fa fa-clock"></i> 2h 30Min</p>
+                    </div>
+                </div>
+                <div class="course-card" routerLink="/watch">
+                    <img src="https://via.placeholder.com/100" alt="Infrastructure">
+                    <h3>Infrastructure</h3>
+                    <div class="course-details">
+                        <p class="rating"><i class="fa fa-star"></i> 4.7 (150 reviews)</p>
+                        <p><i class="fa fa-clock"></i> 1h 30Min</p>
+                    </div>
+                </div>
+                <!-- Add more course-cards routerLink="/watch" as needed -->
+            </div>
+        </section>
+    </div>
+
+</div>
