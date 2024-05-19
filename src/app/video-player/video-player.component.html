@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="header">
+        <i class="fa fa-arrow-left" routerLink="/home"></i>
+    </div>
     <div class="video-thumbnail">
         <video width="100%" (click)="playPauseContent()" id="classContent" (loadeddata)="checkContentLoaded()"
             (timeupdate)="checkContinuousContentduration()" frameborder="0" [poster]="videoDetails.poster"
@@ -24,6 +27,7 @@
                 <a (click)="togglereadMoreDescribe()">{{readMore?'Hide':'Read More'}}</a>
             </p>
         </div>
+        
         <section class="your-courses">
             <h3>Next courses</h3>
             <div class="courses">

@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProfileInfoComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
