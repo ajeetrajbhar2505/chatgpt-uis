@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class CourseComponent {
 
+  expandInfo: string = "large"
+  toggleExpansion(expandInfo: string) {
+    this.expandInfo = expandInfo
+  }
+
 }

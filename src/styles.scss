@@ -258,6 +258,7 @@ footer i:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .profile {
@@ -440,7 +441,6 @@ footer i:first-child {
 }
 
 .breadcrumb {
-    font-size: 14px;
     color: #999;
     margin-bottom: 40px;
 }
@@ -673,4 +673,95 @@ h2 {
 }
 
 
+
+
+
+.view-icons .fa {
+    font-size: 20px;
+    color: #333;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.last-update {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    background: #eaf3f9;
+    color: #00796b;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.category.active {
+    background-color: #fda34b;
+    color: #fff;
+}
+
+.category .icon {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.category.active .icon {
+    background-color: #fff;
+}
+
+.category .icon .fa {
+    font-size: 24px;
+    color: #00796b;
+}
+
+.category .details p .fa {
+    font-size: 15px;
+    margin-right: 7px;
+    color: #00796b;
+}
+
+.category .details h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+.category.active .details h2 {
+    color: #fff;
+}
+
+.category .details p {
+    font-size: 12px;
+    color: #999;
+}
+
+.category.active .details p {
+    color: #fff;
+}
+
+.category .options {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+}
+
+.category.active .options {
+    color: #fff;
+}
 

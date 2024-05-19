@@ -5,35 +5,77 @@
     <header class="header">
         <h2>Courses</h2>
         <div class="view-icons">
-            <i class="fa fa-th-large"></i>
-            <i class="fa fa-list"></i>
+            <i class="fa fa-th-large" (click)="toggleExpansion('large')"></i>
+            <i class="fa fa-list" (click)="toggleExpansion('list')"></i>
         </div>
     </header>
     <nav class="breadcrumb">
         <span>Home</span> › <span>Course</span>
     </nav>
 
-    <div class="folders">
-        <div class="folder active">
-            <i class="fa fa-play-circle"></i>
+    <div class="folders" *ngIf="expandInfo == 'large'">
+        <div class="folder active" routerLink="/file">
+            <i class="fa fa-file-video"></i>
             <h2>Video</h2>
-            <p><i class="fa fa-list"></i> 18 Items</p>
+            <p>289 Items</p>
         </div>
-        <div class="folder active">
-            <i class="fa fa-volume-up"></i>
+        <div class="folder active" routerLink="/file">
+            <i class="fa fa-music"></i>
             <h2>Audio</h2>
-             <p><i class="fa fa-list"></i> 12 Items</p>
+            <p> 29 Items</p>
         </div>
-        <div class="folder active">
+        <div class="folder active" routerLink="/file">
             <i class="fa fa-file"></i>
             <h2>Document</h2>
-             <p><i class="fa fa-list"></i> 25 Items</p>
+            <p> 180 Items</p>
         </div>
-        <div class="folder active">
+        <div class="folder active" routerLink="/file">
             <i class="fa fa-book"></i>
             <h2>Quiz</h2>
-             <p><i class="fa fa-list"></i> 4 Items</p>
+            <p> 180 Items</p>
         </div>
 
     </div>
+    <div class="container" *ngIf="expandInfo == 'list'">
+        <div class="categories">
+            <div class="category">
+                <div class="icon">
+                    <i class="fa fa-file-video"></i>
+                </div>
+                <div class="details">
+                    <h2>Videos</h2>
+                    <p>289 Items</p>
+                </div>
+                <!-- <i class="fa fa-ellipsis-v options"></i> -->
+            </div>
+            <div class="category">
+                <div class="icon">
+                    <i class="fa fa-music"></i>
+                </div>
+                <div class="details">
+                    <h2>Audios</h2>
+                    <p>29 Items</p>
+                </div>
+            </div>
+            <div class="category">
+                <div class="icon">
+                    <i class="fa fa-file"></i>
+                </div>
+                <div class="details">
+                    <h2>Documents</h2>
+                    <p>180 Items</p>
+                </div>
+            </div>
+            <div class="category">
+                <div class="icon">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="details">
+                    <h2>Quiz</h2>
+                    <p>180 Items</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
