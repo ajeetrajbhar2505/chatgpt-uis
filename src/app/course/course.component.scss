@@ -1,0 +1,123 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 28px; /* Increased font size for better readability */
+    margin: 0;
+    color: #333; /* Added color for consistency */
+}
+
+.view-icons .fa {
+    font-size: 22px; /* Slightly increased font size for better visibility */
+    color: #666; /* Updated color for a softer look */
+    margin-left: 15px; /* Increased margin for better spacing */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Added transition for hover effect */
+}
+
+.view-icons .fa:hover {
+    color: #00796b; /* Darken color on hover */
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.folders {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.folder {
+    background: #f2f4fc; /* Added gradient for a more modern look */
+    padding: 15px 0 0 20px;
+    border-radius: 12px; /* Slightly increased border radius for a smoother look */
+    position: relative;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    margin-bottom: 10px; /* Added margin for better spacing */
+    transform: translateY(-5px); /* Added slight lift on hover */
+}
+
+.folder::before {
+    content: "";
+    position: absolute;
+    top: -11px; /* Adjust based on the size of the tab */
+    left: 0px; /* Align with padding */
+    width: 60px; /* Width of the tab */
+    height: 20px; /* Height of the tab */
+    background-color: #eef3f8; /* Same as the folder background */
+    border-top-left-radius: 8px; /* Smooth corner for the tab */
+    border-top-right-radius: 20px; /* Smooth corner for the tab */
+    z-index: -1; /* Place behind the folder */
+}
+
+
+.folder.active {
+    background: #eaf3f9; /* Updated active background to gradient */
+    color: #00796b;
+}
+
+.folder.active::before {
+    background-color: #eaf3f9; /* Match the active background */
+}
+
+.folder i.fa {
+    font-size: 28px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Added transition for icon color */
+}
+.folder p i.fa{
+    font-size: 15px;
+}
+
+.folder.active i.fa {
+    color: #00796b;
+}
+
+.folder h2 {
+    font-size: 18px; /* Increased font size for better readability */
+    margin: 0;
+    margin-bottom: 8px; /* Slightly increased margin for better spacing */
+    color: #00796b;
+    transition: color 0.3s ease; /* Added transition for text color */
+}
+
+.folder.active h2 {
+    color: #00796b;
+}
+
+.folder p {
+    font-size: 14px; /* Increased font size for better readability */
+    color: #999;
+    transition: color 0.3s ease; /* Added transition for text color */
+}
+
+.folder.active p {
+    color: #00796b;
+}
+
+.folder .options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px; /* Increased font size for better visibility */
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Added transition for color */
+}
+
+.folder .options:hover {
+    color: #00796b; /* Darken color on hover */
+}
+
+.folder.active .options {
+    color: #00796b;
+}
