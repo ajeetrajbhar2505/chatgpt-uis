@@ -9,38 +9,48 @@
             <i class="fa fa-list" (click)="toggleExpansion('list')"></i>
         </div>
     </header>
-    <nav class="breadcrumb">
-        <span>Home</span> › <span>Course</span>
-    </nav>
+ 
 
     <div class="folders" *ngIf="expandInfo == 'large'">
-        <div class="folder active" routerLink="/file">
-            <i class="fa fa-file-video"></i>
+        <div class="folder" routerLink="/file">
+            <i class="fa fa-video"></i>
             <h2>Video</h2>
             <p>289 Items</p>
         </div>
-        <div class="folder active" routerLink="/file">
+        <div class="folder" routerLink="/file">
             <i class="fa fa-music"></i>
             <h2>Audio</h2>
             <p> 29 Items</p>
         </div>
-        <div class="folder active" routerLink="/file">
+        <div class="folder" routerLink="/file">
             <i class="fa fa-file"></i>
             <h2>Document</h2>
             <p> 180 Items</p>
         </div>
-        <div class="folder active" routerLink="/file">
+        <div class="folder" routerLink="/file">
             <i class="fa fa-book"></i>
             <h2>Quiz</h2>
             <p> 180 Items</p>
         </div>
 
     </div>
+
+    <div class="trial-banner">
+        <div class="trial-text">
+            <h2>7 Days Free Trial</h2>
+            <p>Lorem ipsum dolor amet consectetuer adipiscing elit enean commodo.</p>
+            <button>Join</button>
+        </div>
+        <div class="trial-image">
+            <img src="https://via.placeholder.com/100" alt="Trial Image">
+        </div>
+    </div>
+
     <div class="container" *ngIf="expandInfo == 'list'">
-        <div class="categories">
-            <div class="category">
+        <div class="categories mt-2">
+            <div class="category" routerLink="/file">
                 <div class="icon">
-                    <i class="fa fa-file-video"></i>
+                    <i class="fa fa-video"></i>
                 </div>
                 <div class="details">
                     <h2>Videos</h2>
@@ -48,7 +58,7 @@
                 </div>
                 <!-- <i class="fa fa-ellipsis-v options"></i> -->
             </div>
-            <div class="category">
+            <div class="category" routerLink="/file">
                 <div class="icon">
                     <i class="fa fa-music"></i>
                 </div>
@@ -57,7 +67,7 @@
                     <p>29 Items</p>
                 </div>
             </div>
-            <div class="category">
+            <div class="category" routerLink="/file">
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
@@ -66,7 +76,7 @@
                     <p>180 Items</p>
                 </div>
             </div>
-            <div class="category">
+            <div class="category" routerLink="/file">
                 <div class="icon">
                     <i class="fa fa-book"></i>
                 </div>

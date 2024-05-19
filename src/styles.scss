@@ -441,18 +441,33 @@ footer i:first-child {
 }
 
 .breadcrumb {
-    color: #999;
-    margin-bottom: 40px;
+    color: #333333;
+    margin-bottom: 20px;
+    .fa{
+        color: #333;
+    }
 }
 
 .folders {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding-top: 15px;
+}
+
+.folders-scrollable{
+        display: grid;
+        grid-auto-flow: column; /* Enable horizontal flow */
+        grid-auto-columns: minmax(200px, 1fr); /* Set minimum width for columns */
+        gap: 20px;
+        padding-top: 15px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Optional: adds snapping to each item */
 }
 
 
 .folder {
+    color: #00796b;
     background: #f2f4fc; /* Added gradient for a more modern look */
     padding: 15px 0 0 20px;
     border-radius: 12px; /* Slightly increased border radius for a smoother look */
@@ -477,12 +492,12 @@ footer i:first-child {
 
 
 .folder.active {
-    background: #eaf3f9; /* Updated active background to gradient */
+    background: #eef3f8; /* Updated active background to gradient */
     color: #00796b;
 }
 
 .folder.active::before {
-    background-color: #eaf3f9; /* Match the active background */
+    background-color: #eef3f8; /* Match the active background */
 }
 
 .folder i.fa {
@@ -697,7 +712,8 @@ h2 {
 
 .category {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: start;
     background: #eaf3f9;
     color: #00796b;
     padding: 10px;
@@ -765,3 +781,6 @@ h2 {
     color: #fff;
 }
 
+.mt-2{
+    margin-top: 10px;
+}
