@@ -67,7 +67,8 @@ header {
 }
 
 .trial-text button {
-    background-color: #00796b;
+    // background-color: #00796b;
+    background: #333;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -175,7 +176,8 @@ header {
 
 .course-card {
     align-items: center;
-    background-color: #e0f7fa;
+    // background-color: #e0f7fa;
+    background: #eaf3f9;
     border-radius: 10px;
     padding: 15px;
     flex: 1;
@@ -183,7 +185,6 @@ header {
     min-width: 200px;
     /* Ensures a minimum width for the course cards */
 }
-
 
 
 
