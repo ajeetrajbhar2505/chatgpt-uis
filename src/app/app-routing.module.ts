@@ -7,8 +7,8 @@ import { CourseComponent } from './course/course.component';
 import { FilesComponent } from './files/files.component';
 
 const routes: Routes = [
-  {path : '',redirectTo : 'home',pathMatch : 'full'},
-  {path : 'home',component : HomeComponent},
+  {path : '',redirectTo : '',pathMatch : 'full'},
+  {path : '',component : HomeComponent},
   {path : 'profile',component : ProfileInfoComponent},
   {path : 'watch',component : VideoPlayerComponent},
   {path : 'course',component : CourseComponent},
