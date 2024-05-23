@@ -9,6 +9,7 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { CourseComponent } from './course/course.component';
 import { FilesComponent } from './files/files.component';
+import { MembershipPlanComponent } from './membership-plan/membership-plan.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FilesComponent } from './files/files.component';
     ProfileInfoComponent,
     VideoPlayerComponent,
     CourseComponent,
-    FilesComponent
+    FilesComponent,
+    MembershipPlanComponent
   ],
   imports: [
     BrowserModule,

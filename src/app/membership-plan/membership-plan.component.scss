@@ -1,0 +1,92 @@
+
+
+.membership-options {
+    display: grid;
+    gap: 15px;
+}
+
+.membership-card {
+    display: flex;
+    align-items: center;
+    background-color: #eaf3f9;;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.membership-card img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.membership-card .details {
+    flex-grow: 1;
+}
+
+.membership-card h2 {
+    font-size: 14px;
+    color: #00796b;
+    margin: 10px 0;
+}
+
+.membership-card p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.membership-card .price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.membership-card input[type="radio"] {
+    display: none;
+}
+
+.membership-card input[type="radio"]:checked + img + .details {
+    border-color: #ff5722;
+}
+
+.membership-card input[type="radio"]:checked + .details {
+    border-color: #ff5722;
+}
+
+.membership-card.monthly {
+    background-color: #f3e5f5;
+}
+
+.membership-card.yearly {
+    background-color: #e0f7fa;
+}
+
+.membership-card.lifetime {
+    background-color: #fff3e0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer .total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f39c12;;
+}
+
+footer .pay-now {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
