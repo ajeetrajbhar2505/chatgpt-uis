@@ -1,0 +1,42 @@
+
+.status-card {
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.status-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.status-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.status-message {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 20px 0;
+}
+
+.status-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+

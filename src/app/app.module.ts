@@ -10,6 +10,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { CourseComponent } from './course/course.component';
 import { FilesComponent } from './files/files.component';
 import { MembershipPlanComponent } from './membership-plan/membership-plan.component';
+import { FlashMessageComponent } from './flash-message/flash-message.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MembershipPlanComponent } from './membership-plan/membership-plan.compo
     VideoPlayerComponent,
     CourseComponent,
     FilesComponent,
-    MembershipPlanComponent
+    MembershipPlanComponent,
+    FlashMessageComponent
   ],
   imports: [
     BrowserModule,
